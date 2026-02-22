@@ -168,89 +168,47 @@
             margin-bottom: 1.5rem;
         }
 
-        .view-selector {
+        .calendar-tabs {
+            display: flex;
+            margin-top: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            background: #f9fafb;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #6b7280;
+            transition: all 0.2s;
+            flex: 1;
             position: relative;
         }
 
-        .view-dropdown {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
+        .tab-button:hover {
+            color: #374151;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .tab-button.active {
+            color: #6366f1;
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            font-size: 0.875rem;
-            transition: all 0.2s;
-            min-width: 200px;
-            justify-content: space-between;
+            font-weight: 600;
         }
 
-        .view-dropdown:hover {
-            border-color: #6366f1;
-            box-shadow: 0 1px 3px rgba(99, 102, 241, 0.1);
-        }
-
-        .view-label {
-            color: #6b7280;
-            font-size: 0.75rem;
-        }
-
-        .view-current {
-            color: #111827;
-            font-weight: 500;
-        }
-
-        .view-arrow {
-            color: #6b7280;
-            transition: transform 0.2s;
-        }
-
-        .view-dropdown.open .view-arrow {
-            transform: rotate(180deg);
-        }
-
-        .view-menu {
+        .tab-button.active::after {
+            content: '';
             position: absolute;
-            top: calc(100% + 0.5rem);
+            bottom: -1px;
+            left: 0;
             right: 0;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            min-width: 200px;
-            overflow: hidden;
-            z-index: 10;
-            display: none;
-        }
-
-        .view-menu.active {
-            display: block;
-        }
-
-        .view-option {
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .view-option:hover {
-            background: #f9fafb;
-        }
-
-        .view-option.selected {
-            background: #eff6ff;
-            color: #6366f1;
-            font-weight: 500;
-        }
-
-        .view-option-check {
-            margin-left: auto;
-            color: #6366f1;
+            height: 2px;
+            background: #6366f1;
         }
 
         .month-nav {
@@ -1009,24 +967,13 @@
                                     <div class="month-title" id="monthTitle">June 2026</div>
                                     <button class="nav-btn" onclick="changeMonth(1)">›</button>
                                 </div>
-                                <div class="view-selector">
-                                    <div class="view-dropdown" id="viewDropdown">
-                                        <div>
-                                            <div class="view-label">Calendar View:</div>
-                                            <div class="view-current" id="currentView">My Booked Camps</div>
-                                        </div>
-                                        <div class="view-arrow">▼</div>
-                                    </div>
-                                    <div class="view-menu" id="viewMenu">
-                                        <div class="view-option" data-view="registration">
-                                            📅 Registration Dates
-                                            <span class="view-option-check" style="display: none;">✓</span>
-                                        </div>
-                                        <div class="view-option selected" data-view="summer">
-                                            🏕️ My Booked Camps
-                                            <span class="view-option-check">✓</span>
-                                        </div>
-                                    </div>
+                                <div class="calendar-tabs">
+                                    <button class="tab-button" data-view="registration" onclick="switchCalendarView('registration')">
+                                        📅 Registration Dates
+                                    </button>
+                                    <button class="tab-button active" data-view="summer" onclick="switchCalendarView('summer')">
+                                        🏕️ My Booked Camps
+                                    </button>
                                 </div>
                             </div>
 
@@ -2379,59 +2326,30 @@
             document.getElementById('pageTitle').textContent = titles[viewName];
         }
 
-        // Calendar view dropdown
-        const viewDropdown = document.getElementById('viewDropdown');
-        const viewMenu = document.getElementById('viewMenu');
-        const currentView = document.getElementById('currentView');
+        // Calendar view tabs
         const registrationView = document.getElementById('registrationView');
         const summerView = document.getElementById('summerView');
         const monthTitle = document.getElementById('monthTitle');
 
-        // Toggle dropdown
-        viewDropdown.addEventListener('click', (e) => {
-            e.stopPropagation();
-            viewDropdown.classList.toggle('open');
-            viewMenu.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-            viewDropdown.classList.remove('open');
-            viewMenu.classList.remove('active');
-        });
-
-        // Handle view selection
-        document.querySelectorAll('.view-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const view = option.dataset.view;
-
-                // Update selected state
-                document.querySelectorAll('.view-option').forEach(opt => {
-                    opt.classList.remove('selected');
-                    opt.querySelector('.view-option-check').style.display = 'none';
-                });
-                option.classList.add('selected');
-                option.querySelector('.view-option-check').style.display = 'inline';
-
-                // Update view
-                if (view === 'registration') {
-                    currentView.textContent = 'Registration Dates';
-                    registrationView.style.display = 'block';
-                    summerView.style.display = 'none';
-                    monthTitle.textContent = 'February 2026';
-                } else {
-                    currentView.textContent = 'My Booked Camps';
-                    summerView.style.display = 'block';
-                    registrationView.style.display = 'none';
-                    monthTitle.textContent = 'June 2026';
-                }
-
-                // Close dropdown
-                viewDropdown.classList.remove('open');
-                viewMenu.classList.remove('active');
+        // Tab switching function
+        function switchCalendarView(view) {
+            // Update tab states
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
             });
-        });
+            document.querySelector(`[data-view="${view}"]`).classList.add('active');
+
+            // Update view visibility and month
+            if (view === 'registration') {
+                registrationView.style.display = 'block';
+                summerView.style.display = 'none';
+                monthTitle.textContent = 'February 2026';
+            } else {
+                summerView.style.display = 'block';
+                registrationView.style.display = 'none';
+                monthTitle.textContent = 'June 2026';
+            }
+        }
 
         // Settings toggle switch
         function toggleSwitch(el) {
