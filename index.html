@@ -117,13 +117,13 @@
             transition: all 0.2s;
         }
 
-        .kid-badge.emma {
+        .kid-badge.child1 {
             color: #8B5CF6;
             border-color: #8B5CF6;
             background: #f5f3ff;
         }
 
-        .kid-badge.noah {
+        .kid-badge.child2 {
             color: #3B82F6;
             border-color: #3B82F6;
             background: #eff6ff;
@@ -342,11 +342,11 @@
             height: 5px;
         }
 
-        .camp-line.emma {
+        .camp-line.child1 {
             background: #8B5CF6;
         }
 
-        .camp-line.noah {
+        .camp-line.child2 {
             background: #3B82F6;
         }
 
@@ -394,13 +394,13 @@
             cursor: pointer;
         }
 
-        .camp-event.emma {
+        .camp-event.child1 {
             background: #f5f3ff;
             color: #6b21a8;
             border-left: 3px solid #8B5CF6;
         }
 
-        .camp-event.noah {
+        .camp-event.child2 {
             background: #eff6ff;
             color: #1e40af;
             border-left: 3px solid #3B82F6;
@@ -493,12 +493,12 @@
             display: inline-block;
         }
 
-        .notif-kid.emma {
+        .notif-kid.child1 {
             background: #f5f3ff;
             color: #8B5CF6;
         }
 
-        .notif-kid.noah {
+        .notif-kid.child2 {
             background: #eff6ff;
             color: #3B82F6;
         }
@@ -634,6 +634,29 @@
             background: #4f46e5;
         }
 
+        .add-camp-btn.tracked {
+            background: #059669;
+        }
+
+        .add-camp-btn.tracked:hover {
+            background: #047857;
+        }
+
+        .price-highlight {
+            font-weight: 600;
+            color: #059669;
+        }
+
+        .countdown-timer {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .camp-type-badge.recreation {
+            background: #dcfce7;
+            color: #166534;
+        }
+
         /* My Camps View */
         .my-camps-content {
             padding: 1.5rem;
@@ -668,11 +691,11 @@
             font-size: 1.25rem;
         }
 
-        .kid-avatar.emma {
+        .kid-avatar.child1 {
             background: #8B5CF6;
         }
 
-        .kid-avatar.noah {
+        .kid-avatar.child2 {
             background: #3B82F6;
         }
 
@@ -931,11 +954,11 @@
             border-radius: 2px;
         }
 
-        .legend-line.emma {
+        .legend-line.child1 {
             background: #8B5CF6;
         }
 
-        .legend-line.noah {
+        .legend-line.child2 {
             background: #3B82F6;
         }
     </style>
@@ -1020,7 +1043,7 @@
                                         <div class="day-cell"><span class="date">Sat<br>7</span></div>
                                         <div class="day-cell"><span class="date">Sun<br>8</span></div>
                                         <div class="camp-lines">
-                                            <div class="camp-line emma" style="left: 0%; width: 71.4%; top: 5px;"></div>
+                                            <div class="camp-line child1" style="left: 0%; width: 71.4%; top: 5px;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1036,8 +1059,8 @@
                                         <div class="day-cell"><span class="date">Sat<br>14</span></div>
                                         <div class="day-cell"><span class="date">Sun<br>15</span></div>
                                         <div class="camp-lines">
-                                            <div class="camp-line emma" style="left: 0%; width: 71.4%; top: 5px;"></div>
-                                            <div class="camp-line noah" style="left: 0%; width: 71.4%; top: 15px;"></div>
+                                            <div class="camp-line child1" style="left: 0%; width: 71.4%; top: 5px;"></div>
+                                            <div class="camp-line child2" style="left: 0%; width: 71.4%; top: 15px;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1053,7 +1076,7 @@
                                         <div class="day-cell"><span class="date">Sat<br>21</span></div>
                                         <div class="day-cell"><span class="date">Sun<br>22</span></div>
                                         <div class="camp-lines">
-                                            <div class="camp-line noah" style="left: 0%; width: 71.4%; top: 5px;"></div>
+                                            <div class="camp-line child2" style="left: 0%; width: 71.4%; top: 5px;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1077,7 +1100,7 @@
                                     <div class="calendar-day"><div class="day-number">14</div></div>
                                     <div class="calendar-day">
                                         <div class="day-number">15</div>
-                                        <div class="camp-event emma">Camp Tech 🔴</div>
+                                        <div class="camp-event child1">Camp Tech 🔴</div>
                                     </div>
                                     <div class="calendar-day"><div class="day-number">16</div></div>
                                     <div class="calendar-day"><div class="day-number">17</div></div>
@@ -1091,8 +1114,8 @@
                                     <div class="calendar-day"><div class="day-number">25</div></div>
                                     <div class="calendar-day">
                                         <div class="day-number">26</div>
-                                        <div class="camp-event emma">Tennis 🟡</div>
-                                        <div class="camp-event noah">Sports 🟡</div>
+                                        <div class="camp-event child1">Tennis 🟡</div>
+                                        <div class="camp-event child2">Sports 🟡</div>
                                     </div>
                                     <div class="calendar-day"><div class="day-number">27</div></div>
                                     <div class="calendar-day"><div class="day-number">28</div></div>
@@ -1100,13 +1123,13 @@
                             </div>
 
                             <div class="legend">
-                                <div class="legend-item" data-kid="emma" onclick="toggleKidFilter('emma')">
-                                    <div class="legend-line emma"></div>
-                                    <span>Emma (8)</span>
+                                <div class="legend-item" data-kid="child1" onclick="toggleKidFilter('child1')">
+                                    <div class="legend-line child1"></div>
+                                    <span>Child 1 (8)</span>
                                 </div>
-                                <div class="legend-item" data-kid="noah" onclick="toggleKidFilter('noah')">
-                                    <div class="legend-line noah"></div>
-                                    <span>Noah (10)</span>
+                                <div class="legend-item" data-kid="child2" onclick="toggleKidFilter('child2')">
+                                    <div class="legend-line child2"></div>
+                                    <span>Child 2 (10)</span>
                                 </div>
                             </div>
                         </div>
@@ -1122,7 +1145,7 @@
                                 <div class="notif-item">
                                     <div class="notif-camp">Camp Tech Revolution</div>
                                     <div class="notif-time">Opens in 2 hours (9:00 AM EST)</div>
-                                    <span class="notif-kid emma">Emma</span>
+                                    <span class="notif-kid child1">Child 1</span>
                                 </div>
                             </div>
 
@@ -1131,12 +1154,12 @@
                                 <div class="notif-item">
                                     <div class="notif-camp">Alpharetta Tennis</div>
                                     <div class="notif-time">Opens Friday at 8:00 AM</div>
-                                    <span class="notif-kid emma">Emma</span>
+                                    <span class="notif-kid child1">Child 1</span>
                                 </div>
                                 <div class="notif-item">
                                     <div class="notif-camp">Hi-Five Sports</div>
                                     <div class="notif-time">Opens Thursday at 9:00 AM</div>
-                                    <span class="notif-kid noah">Noah</span>
+                                    <span class="notif-kid child2">Child 2</span>
                                 </div>
                             </div>
 
@@ -1145,8 +1168,8 @@
                                 <div class="notif-item">
                                     <div class="notif-camp">Camp Kingfisher</div>
                                     <div class="notif-time">Opens March 15 at 10:00 AM</div>
-                                    <span class="notif-kid emma">Emma</span>
-                                    <span class="notif-kid noah">Noah</span>
+                                    <span class="notif-kid child1">Child 1</span>
+                                    <span class="notif-kid child2">Child 2</span>
                                 </div>
                             </div>
                         </div>
@@ -1185,47 +1208,192 @@
                         </div>
 
                         <div class="camps-grid" id="campsGrid">
-                            <div class="camp-card" data-type="tech" data-distance="2.3" data-name="Camp Tech Revolution" data-age-min="7" data-age-max="12">
+                            <!-- Verified High-Demand Camps with Real 2026 Data -->
+
+                            <!-- Roswell Recreation - VERIFIED March 4 -->
+                            <div class="camp-card" data-type="recreation" data-distance="1.8" data-name="Roswell Recreation" data-age-min="5" data-age-max="17">
                                 <div class="camp-card-header">
-                                    <div class="camp-name">Camp Tech Revolution</div>
-                                    <div class="camp-type-badge tech">Tech</div>
+                                    <div class="camp-name">Roswell Recreation</div>
+                                    <div class="camp-type-badge recreation">Multi-Type</div>
                                 </div>
                                 <div class="camp-details">
                                     <div class="detail-row">
-                                        <span>📍 2.3 mi away</span>
-                                        <span>💰 $499</span>
+                                        <span>📍 Roswell GA</span>
+                                        <span class="price-highlight">💰 $150-$275/week</span>
                                     </div>
                                     <div class="detail-row">
-                                        <span>👥 Ages 7-12</span>
-                                        <span>🔴 High demand</span>
+                                        <span>👥 Various ages</span>
+                                        <span>🔴 HIGH demand</span>
                                     </div>
                                     <div class="detail-row">
-                                        <span>📅 Reg: Feb 15, 2026</span>
+                                        <span class="countdown-timer">📅 March 4 @ 9:00 AM (Residents)</span>
                                     </div>
                                 </div>
-                                <button class="add-camp-btn">Add to My Camps</button>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
                             </div>
 
-                            <div class="camp-card" data-type="sports" data-distance="3.1" data-name="Alpharetta Tennis Academy" data-age-min="8" data-age-max="14">
+                            <!-- Lavner Camps Tech Revolution - VERIFIED HIGHEST demand -->
+                            <div class="camp-card" data-type="tech" data-distance="1.5" data-name="Lavner Camps Tech Revolution" data-age-min="6" data-age-max="14">
                                 <div class="camp-card-header">
-                                    <div class="camp-name">Alpharetta Tennis Academy</div>
-                                    <div class="camp-type-badge sports">Sports</div>
+                                    <div class="camp-name">Lavner Camps Tech Revolution</div>
+                                    <div class="camp-type-badge tech">STEM/Tech</div>
                                 </div>
                                 <div class="camp-details">
                                     <div class="detail-row">
-                                        <span>📍 3.1 mi away</span>
-                                        <span>💰 $299</span>
+                                        <span>📍 Fusion Academy, Alpharetta</span>
+                                        <span class="price-highlight">💰 $350+/week + $79 reg</span>
                                     </div>
                                     <div class="detail-row">
-                                        <span>👥 Ages 8-14</span>
-                                        <span>🟡 Medium demand</span>
+                                        <span>👥 Ages 6-14</span>
+                                        <span>🔴 HIGHEST demand</span>
                                     </div>
                                     <div class="detail-row">
-                                        <span>📅 Reg: Feb 26, 2026</span>
+                                        <span>📅 OPEN NOW - Payment due March 1</span>
                                     </div>
                                 </div>
-                                <button class="add-camp-btn">Add to My Camps</button>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
                             </div>
+
+                            <!-- Hi-Five Sports - VERIFIED Rolling Registration -->
+                            <div class="camp-card" data-type="sports" data-distance="2.1" data-name="Hi-Five Sports Alpharetta" data-age-min="5" data-age-max="14">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">Hi-Five Sports Alpharetta</div>
+                                    <div class="camp-type-badge sports">Multi-Sport</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 North Point Circle</span>
+                                        <span class="price-highlight">💰 $429/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Ages 5-14</span>
+                                        <span>🔴 HIGH demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>📅 OPEN NOW (Rolling)</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                            <!-- iD Tech Camps - VERIFIED Rolling Registration -->
+                            <div class="camp-card" data-type="tech" data-distance="3.2" data-name="iD Tech Camps" data-age-min="7" data-age-max="17">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">iD Tech Camps</div>
+                                    <div class="camp-type-badge tech">Tech/Coding</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 Georgia Tech & Emory</span>
+                                        <span class="price-highlight">💰 $375+/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Ages 7-17</span>
+                                        <span>🔴 HIGH demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>📅 OPEN NOW (Rolling)</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                            <!-- Club SciKidz - VERIFIED Rolling -->
+                            <div class="camp-card" data-type="stem" data-distance="4.1" data-name="Club SciKidz Atlanta" data-age-min="3" data-age-max="14">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">Club SciKidz Atlanta</div>
+                                    <div class="camp-type-badge stem">STEM</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 Atlanta area</span>
+                                        <span class="price-highlight">💰 $325-$425/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Ages PK-8th</span>
+                                        <span>🔴 HIGHEST demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>📅 Rolling (closes Fri before camp)</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                            <!-- City of Alpharetta Recreation -->
+                            <div class="camp-card" data-type="recreation" data-distance="0.8" data-name="City of Alpharetta Recreation" data-age-min="4" data-age-max="17">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">City of Alpharetta Recreation</div>
+                                    <div class="camp-type-badge recreation">Multi-Type</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 Alpharetta GA</span>
+                                        <span class="price-highlight">💰 $150-$300/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Various ages</span>
+                                        <span>🔴 HIGH demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="countdown-timer">📅 March-April 2026 (TBD)</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                            <!-- Forefront Arts -->
+                            <div class="camp-card" data-type="arts" data-distance="2.5" data-name="Forefront Arts" data-age-min="3" data-age-max="16">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">Forefront Arts</div>
+                                    <div class="camp-type-badge arts">Theatre/Dance</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 13 Atlanta locations</span>
+                                        <span class="price-highlight">💰 $250-$350/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Ages 3-16</span>
+                                        <span>🔴 HIGH demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>📅 Early Bird: Feb-March 2026</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                            <!-- ACE Tennis Academy -->
+                            <div class="camp-card" data-type="sports" data-distance="3.5" data-name="ACE Tennis Academy" data-age-min="5" data-age-max="17">
+                                <div class="camp-card-header">
+                                    <div class="camp-name">ACE Tennis Academy</div>
+                                    <div class="camp-type-badge sports">Tennis</div>
+                                </div>
+                                <div class="camp-details">
+                                    <div class="detail-row">
+                                        <span>📍 Fields Club, Peachtree Corners</span>
+                                        <span class="price-highlight">💰 $300-$450/week</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>👥 Ages 5-17</span>
+                                        <span>🔴 HIGH demand</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span>📅 Registration opens March 2026</span>
+                                    </div>
+                                </div>
+                                <button class="add-camp-btn" onclick="toggleTracking(this)">Track This Camp</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Camps View -->
+                <div id="myCamps" class="view-content">
+                    <div class="my-camps-content">
+                        <div class="kid-section">
 
                             <div class="camp-card" data-type="arts" data-distance="4.5" data-name="Camp Kingfisher Arts" data-age-min="6" data-age-max="11">
                                 <div class="camp-card-header">
@@ -1991,8 +2159,8 @@
                     <div class="my-camps-content">
                         <div class="kid-section">
                             <div class="kid-header">
-                                <div class="kid-avatar emma">E</div>
-                                <div class="kid-name">Emma (8 years old)</div>
+                                <div class="kid-avatar child1">E</div>
+                                <div class="kid-name">Child 1 (8 years old)</div>
                             </div>
 
                             <div class="camp-item">
@@ -2032,8 +2200,8 @@
 
                         <div class="kid-section">
                             <div class="kid-header">
-                                <div class="kid-avatar noah">N</div>
-                                <div class="kid-name">Noah (10 years old)</div>
+                                <div class="kid-avatar child2">N</div>
+                                <div class="kid-name">Child 2 (10 years old)</div>
                             </div>
 
                             <div class="camp-item">
@@ -2110,17 +2278,17 @@
                         <div class="settings-section">
                             <h3>👨‍👩‍👧‍👦 Family Management</h3>
                             <div class="kid-list-item">
-                                <div class="kid-avatar emma">E</div>
+                                <div class="kid-avatar child1">E</div>
                                 <div style="flex: 1;">
-                                    <div class="setting-label">Emma</div>
+                                    <div class="setting-label">Child 1</div>
                                     <div class="setting-description">8 years old • Born: 2018</div>
                                 </div>
                                 <button class="camp-btn" style="flex: none;">Edit</button>
                             </div>
                             <div class="kid-list-item">
-                                <div class="kid-avatar noah">N</div>
+                                <div class="kid-avatar child2">N</div>
                                 <div style="flex: 1;">
-                                    <div class="setting-label">Noah</div>
+                                    <div class="setting-label">Child 2</div>
                                     <div class="setting-description">10 years old • Born: 2016</div>
                                 </div>
                                 <button class="camp-btn" style="flex: none;">Edit</button>
@@ -2299,7 +2467,7 @@
         }
 
         // Kid filter for calendar
-        let activeKids = { emma: true, noah: true };
+        let activeKids = { child1: true, child2: true };
 
         function toggleKidFilter(kid) {
             // Toggle the kid's active state
@@ -2385,6 +2553,74 @@
                 }
             });
         }
+
+        // Camp tracking functionality
+        let trackedCamps = JSON.parse(localStorage.getItem('trackedCamps') || '[]');
+
+        function toggleTracking(button) {
+            const campCard = button.closest('.camp-card');
+            const campName = campCard.dataset.name;
+
+            if (trackedCamps.includes(campName)) {
+                // Remove from tracking
+                trackedCamps = trackedCamps.filter(name => name !== campName);
+                button.textContent = 'Track This Camp';
+                button.classList.remove('tracked');
+            } else {
+                // Add to tracking
+                trackedCamps.push(campName);
+                button.textContent = 'Tracking ✓';
+                button.classList.add('tracked');
+            }
+
+            // Save to localStorage
+            localStorage.setItem('trackedCamps', JSON.stringify(trackedCamps));
+
+            // Show success message
+            showNotification(`${campName} ${trackedCamps.includes(campName) ? 'added to' : 'removed from'} your tracked camps!`);
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #059669;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-size: 14px;
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => notification.style.opacity = '1', 100);
+
+            // Hide and remove notification
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => document.body.removeChild(notification), 300);
+            }, 3000);
+        }
+
+        // Initialize tracking buttons on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.add-camp-btn').forEach(button => {
+                const campCard = button.closest('.camp-card');
+                const campName = campCard.dataset.name;
+
+                if (trackedCamps.includes(campName)) {
+                    button.textContent = 'Tracking ✓';
+                    button.classList.add('tracked');
+                }
+            });
+        });
     </script>
 </body>
 </html>
